@@ -14,7 +14,7 @@ app.use(
       "http://localhost:5173",
       "http://localhost:5174",
       // give access to frontend without /
-      // "https://mern-stack-project-ckukvy0hu-sairabatool123s-projects.vercel.app",
+      "https://mern-git-master-sairabatool123s-projects.vercel.app"
     ],
     methods: ["GET", "PUT", "POST", "DELETE"],
     credentials: true,
