@@ -12,6 +12,7 @@ import { ToastContainer } from "react-toastify";
 import Signup from './Pages/Signup';
 import Login from './Pages/LoginPage';
 import ProtectedRoutes from './utils/propectedRoutes';
+import { ErrorPage } from './Pages/ErrorPage.jsx';
 
 const App = () => {
   const location = useLocation();
@@ -19,19 +20,28 @@ const App = () => {
     return (
       <>
         {!adminPage && <Header />}
+        {/* All Routes Created Like this */}
         <Routes>
-          {/* All Routes Created Like this */}
-          {/* <Route path="/" element={<Home />} /> */}
-
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<LoginPage />} />
-            <Route path="/logout" element={<Logout />} />
+          {/* Public Routes */}
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/admin" element={<Admin />} />
-          
+
+          {/* Protected Routes */}
+          {/* <Route element={<ProtectedRoutes />}> */}
+          {/* <Route path="/product" element={<Product />} /> */}
+          {/* <Route path="/about" element={<About />} />*/}
+          {/* <Route path="/contact" element={<Contact />} /> */}
+          {/* </Route> */}
+
           {/* PROTECTED ROUTES  */}
-          <Route element={ProtectedRoutes}>
-            {/* just for product about and contact  */}
-          </Route>
+          {/* <Route element={ProtectedRoutes}> */}
+          {/* just for product about and contact  */}
+          {/* </Route> */}
+
+          {/* 404 Error Page */}
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
         {!adminPage && <Footer />}
       </>

@@ -8,8 +8,7 @@
   "main": "server.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.mjs",
-    "dev": "server.mjs"
+    "start": "nodemon server.mjs"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

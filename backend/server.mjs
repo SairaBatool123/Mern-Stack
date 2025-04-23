@@ -1,11 +1,8 @@
 import express from "express";
-import mongoose from "./db/index.mjs";
+import mongoose from "./db/db.mjs";
 import userRoutes from "./routes/userRoutes.mjs"
 import cors from "cors";
-import connectToDB from "./db/index.mjs";
 
-//Connecting MongoDB
-connectToDB()
 const app = express();
 
 app.use(
@@ -37,5 +34,5 @@ app.use("/", (req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Server is Running on ${port}`);
 });
