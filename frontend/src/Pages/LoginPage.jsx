@@ -128,13 +128,6 @@ const Login = () => {
           >
             {loading ? "Logging In..." : "Log In"}
           </button>
-          <p className="m-auto text-center font-semibold text-fuchsia-900">
-            Admin Dashboard
-          </p>
-          <p className="text-gray-500 text-center mb-4 font-serif">
-            Email Address: admin@gmail.com <br />
-            Password: admin
-          </p>
         </form>
       </div>
     </div>
