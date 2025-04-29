@@ -7,15 +7,19 @@ export const ErrorPage = () => {
 
   return (
     <>
-      <h1>404</h1>
-      <h1>WE ARE SORRY, PAGE NOT FOUNT!</h1>
-      <h3>
-        Oops! An Occurred error occurred. Please check the URL or go back to
-        home.
-      </h3>
-      <NavLink to="/">
-        <button className="btn border-t-pink-950">Go To Home</button>
-      </NavLink>
+      <div className="text-center mt-50">
+        <h1 className="text-6xl font-bold mb-3">404</h1>
+        <h1>WE ARE SORRY, PAGE NOT FOUND!</h1>
+        <h3>
+          Oops! An Occurred error occurred. Please check the URL or go back to
+          home.
+        </h3>
+        <NavLink to="/">
+          <button className="mt-3 w-40 bg-fuchsia-800 text-white py-2 rounded-xl font-semibold transition duration-300">
+            Go To Home
+          </button>
+        </NavLink>
+      </div>
     </>
   );
 };

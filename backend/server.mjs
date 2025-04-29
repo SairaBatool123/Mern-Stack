@@ -16,7 +16,7 @@ app.use(
     ],
     methods: ["GET", "PUT", "POST", "DELETE"],
     credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type", "Authorization", "userid"],
   })
 );
 
@@ -71,8 +71,8 @@ app.use(
 
 app.use(express.json());
 const port = process.env.PORT || 8080;
-app.use("/auth",userRoutes)
-app.use("/auth/api",taskRoutes)
+app.use("/auth", userRoutes)
+app.use("/task", taskRoutes)
 
 app.use("/", (req, res, next) => {
   console.log("Request URL:", req.url, "method: ", req.method);

@@ -10,7 +10,7 @@ import {
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom"; // Import Link for routing
-import logo from "../../assets/images/logo (4).png";
+import logo from "../../assets/images/logo.png";
 import { useSelector } from "react-redux";
 
 const Header = () => {
@@ -23,46 +23,40 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-white shadow-lg text-[#BD1521] font-serif">
+    <nav className="bg-white shadow-lg text-fuchsia-900 font-serif">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link to="/">
-              <img className="size-16 sm:size-16" src={logo} alt="logo" />
+              <img
+                className="size-10 sm:size-12"
+                style={{
+                  filter:
+                    "invert(6%) sepia(95%) saturate(6097%) hue-rotate(307deg) brightness(60%) contrast(102%)",
+                }}
+                src={logo}
+                alt="logo"
+              />
             </Link>
           </div>
-
-          <div className="hidden sm:flex space-x-6 ">
-            <NavLink to="/" text="Home" />
-            {isAuthenticated && <NavLink to="/profile" text="Profile" />}
-            <NavLink to="/products" text="Products" />
-            <NavLink to="/about" text="About" />
-            <NavLink to="/contact" text="Contact" />
-
-            {isAuthenticated ? (
-              <NavLink to="/logout" text="Logout" />
-            ) : (
-              <>
-                <NavLink to="/signup" text="Sign Up" />
-                <NavLink to="/login" text="Login" />
-              </>
-            )}
-          </div>
-
-          <div className="flex gap-6">
-            <div className="flex items-center">
-              <Link to="/cart" className="relative flex items-center">
-                <FontAwesomeIcon
-                  icon={faCartShopping}
-                  className="h-6 w-6 sm:h-8 sm:w-8 hover:text-[#BD1521]  transition duration-300"
-                />
-              </Link>
+          <div className="hidden sm:flex justify-between items-center w-full px-6">
+            <NavLink to="/" text="All Task" />
+            <div className="flex gap-4">
+              {isAuthenticated ? (
+                <NavLink to="/logout" text="Logout" />
+              ) : (
+                <>
+                  <NavLink to="/signup" text="Sign Up" />
+                  <NavLink to="/login" text="Login" />
+                </>
+              )}
             </div>
-
+          </div>
+          <div className="flex gap-6">
             <div className="sm:hidden">
               <button
                 onClick={toggleMenu}
-                className="text-gray-500 hover:text-[#BD1521] focus:outline-none cursor-pointer"
+                className="text-gray-500 hover:text-fuchsia-900  focus:outline-none cursor-pointer"
               >
                 {isOpen ? (
                   <FontAwesomeIcon
@@ -87,15 +81,8 @@ const Header = () => {
         } sm:hidden bg-white shadow-md`}
       >
         <div className="px-4 pt-2 pb-3 space-y-2">
-          <NavLinkMobile to="/" text="Home" onClick={toggleMenu} />
-          <NavLinkMobile to="/products" text="Products" onClick={toggleMenu} />
-          {isAuthenticated && (
-            <NavLinkMobile to="/profile" text="Profile" onClick={toggleMenu} />
-          )}
-          <NavLinkMobile to="/about" text="About" onClick={toggleMenu} />
-          <NavLinkMobile to="/contact" text="Contact" onClick={toggleMenu} />
-          <NavLinkMobile to="/signup" text="Sign Up" />
-          <NavLinkMobile to="/login" text="Login" />
+          <NavLinkMobile to="/" text="All Task" onClick={toggleMenu} />
+          <NavLinkMobile to="/logout" text="Log Out" />
         </div>
       </div>
     </nav>
@@ -105,7 +92,7 @@ const Header = () => {
 const NavLink = ({ to, icon, text }) => (
   <Link
     to={to}
-    className="flex items-center text-gray-700 hover:text-[#BD1521]  transition duration-300 relative group"
+    className="flex items-center text-gray-700 hover:text-fuchsia-900 transition duration-300 relative group"
   >
     {icon && (
       <span className="mr-2">
@@ -113,7 +100,7 @@ const NavLink = ({ to, icon, text }) => (
       </span>
     )}
     <span>{text}</span>
-    <span className="absolute bottom-0 left-0 w-full bg-[#BD1521] h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+    <span className="absolute bottom-0 left-0 w-full bg-fuchsia-900 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
   </Link>
 );
 
@@ -121,7 +108,7 @@ const NavLinkMobile = ({ to, text, onClick }) => (
   <Link
     to={to}
     onClick={onClick}
-    className="block py-2 px-3 text-gray-700 hover:text-[#BD1521] transition duration-300 relative group"
+    className="block py-2 px-3 text-gray-700 hover:text-fuchsia-900  transition duration-300 relative group"
   >
     <span>{text}</span>
     <span className="absolute bottom-0 left-0 w-full  h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>

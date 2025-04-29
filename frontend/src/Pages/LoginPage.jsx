@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import logo from "../assets/images/logo.png";
@@ -80,8 +80,9 @@ const Login = () => {
           Login to your account
         </h2>
         <p className="text-gray-500 text-center mb-6">
-          Don't have an account yet? <a className="text-fuchsia-900" href="/signup">
-          SignUp
+          Don't have an account yet?{" "}
+          <a className="text-fuchsia-900" href="/signup">
+            SignUp
           </a>
         </p>
         <form className="space-y-4" onSubmit={handleSubmit}>
@@ -128,6 +129,16 @@ const Login = () => {
           >
             {loading ? "Logging In..." : "Log In"}
           </button>
+          <p className="text-gray-500 text-center text-sm font-serif">
+            Each User Can Create Own Account And Task Separately
+          </p>
+          <p className="m-auto text-center font-semibold text-fuchsia-900">
+            For Dummy User AND TASK
+          </p>
+          <p className="text-gray-500 text-center mb-4 font-serif">
+            Email Address: saira@gmail.com <br />
+            Password: saira
+          </p>
         </form>
       </div>
     </div>

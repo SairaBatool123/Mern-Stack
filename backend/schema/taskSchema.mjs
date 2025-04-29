@@ -6,22 +6,19 @@ const taskSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.String,
       required: true,
     },
-    discription: {
+    description: {
       type: mongoose.Schema.Types.String,
       required: true,
     },
-    role: {
-      type: String,
-      default: 'user',
+    complete: {
+      type: Boolean,
+      default: false,
     },
   },
   {
-    timestamps: {
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
-    },
-  },
+    timestamps: true,
+  }
 );
 
-const Task = mongoose.model("Task", taskSchema);
+const Task = mongoose.model("task", taskSchema);
 export default Task;
