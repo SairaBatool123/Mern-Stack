@@ -83,7 +83,7 @@ function Card({ home }) {
        tasks: [...prevData.tasks, response.data.task], // assuming API returns { task: {...} }
      }));
    } catch (error) {
-     handleError(error);
+     handleError("User Should be a Logged In", error);
      console.log("Add Task Error:", error);
    }
  };
